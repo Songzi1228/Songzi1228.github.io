@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-07-25 23:12:51'
+  postUpdate: '2024-01-10 11:18:14'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,9 +137,84 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">学习日志</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">学习日志</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="栈、队列和数组"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组">栈、队列和数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-25T14:53:05.000Z" title="Created 2023-07-25 22:53:05">2023-07-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/kaoyan-DS/">kaoyan-DS</a></span></div><div class="content">第三章： 栈、队列和数组
-栈
-栈的基本概念
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">学习日志</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">学习日志</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/01/10/62952bc30e08/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/62952bc30e08/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.389Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">常见的神经网络激活函数
+1.线性激活函数
+​	线性激活函数的存在恰恰证明了需要非线性激活函数的存在，因为多个线性激活函数（多个隐藏层）神经网络与只有一个线性激活函数隐藏层的神经网络一样。
+2.sigmoid 函数（logistic回归使用的激活函数）
+a=g(z)=11+e−za = g(z) = \frac{1}{1+e^{-z}}
+a=g(z)=1+e−z1​
+
+导数：g′(z)=g(z)∗(1−g(z))导数： g&#x27;(z) = g(z)*(1 - g(z))
+导数：g′(z)=g(z)∗(1−g(z))
+3. tanh函数
+a=g(z)=ez−e−zez+e−za = g(z) = \frac{e^z-e^{-z}}{e^z+e^{-z}}
+a=g(z)=ez+e−zez−e−z​
+
+​
+​	tanh 函数是由sigmoid 函数平移收缩得到。
+4.relu 函数
+a=g(z)=max(0,z)g′(z)={1,z&gt;0undefined,z=00,z&lt;0a = g(z) = max(0,z) \\
+\\
+
+g&#x27;(z) = \begin{cases} ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/01/10/99f41d564827/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/99f41d564827/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.382Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">KNN 算法（K Near Neighbor）
+一、简介
+​	就是说每个样本都可以根据与它最接近的K个邻居来代表，是一种基于监督学习方式的分类算法。简单来表达：近朱者赤近墨者黑。具体可以表示为下图：
+
+​	图中绿色的点可以根据距离K内的其他邻居来判断是三角还是方块。
+二、距离
+​	我们一般选用曼哈顿距离或者是欧氏距离，具体表述公式如下：
+曼哈顿距离:d1,2=∑i=1k∣x1i−x2i∣欧氏距离:d1,2=∑i=1k∣x1i−x2i∣2曼哈顿距离: d_{1,2} = \sum_{i=1}^k|x_{1i}-x_{2i}|
+\\欧氏距离: d_{1,2} =\sqrt{\sum_{i=1}^k{|x_{1i}-x_{2i}|}^2}
+曼哈顿距离:d1,2​=i=1∑k​∣x1i​−x2i​∣欧氏距离:d1,2​=i=1∑k​∣x1i​−x2i​∣2​
+三、K值的选取
+​	K值的选取对于算法的影响很大，K = 0的时候没有邻居，K = N(邻居个数)的时候输出邻居中数量最多的。所以为了选取一个合适的K值也很重要。
+交叉验证法
+​	我们使用交叉验证发来搜索K值，具体例子如下；
+123456 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/01/10/960ed5a79a8d/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/960ed5a79a8d/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.373Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">NLP–Transformer 入门
+Part1 自然语言处理
+​	自然语言处理，又称计算语言学（NLP）。借助计算机研究人类语言的科学。
+​	自然语言的研究基本上分为两个阶段：
+​		1.通过语法理解自然语言。 该阶段主要目的是分析语句、获取语义。依靠语言学家人工总结文法规则，但实际上自然语言是一种上下文有关文法，实际很难用计算机进行解析。
+​		2.统计语言学。 基于数学模型和统计方法。例如语音识别、词性分析（核心是通信系统加隐马尔可夫模型，输入输出一维符号，且保留原始次序），机器翻译（输出为二维树型结构的句法分析）。
+统计语言模型：
+模型的核心思想判断一个文字序列是否构成人类能够理解并且有意义的句子。
+IBM 实验室的 Jelinek提供如下思路：
+​	一个文字序列 w1,w2,w3......wnw_1,w_2,w_3......w_nw1​,w2​,w3​......wn​是否合理，看这个句子S出现的概率大小P(S)如何，概率越大说明这个句子越合理。
+P(S)=P(w1,w2,w3,...,wn)=P(w1)P(w2∣w1)P(w3∣w1,w2)...P(wn∣w1,w2,. ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/01/10/4e83bb4180ae/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/4e83bb4180ae/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.373Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">Transformer 模型
+一、起源发展
+​	1.两个著名的Transformer模型：
+​		GPT:(the Generative Pretrained Transformer)
+​		BERT(Bidirection Encoder Representations Transformers)
+​	2.分类
+​		纯Encoder 模型(例如BERT),又称自编码(auto-encoding) Transformer模型；
+​		纯Decoder 模型(例如GPT), 又称自回归(auto-regressive)Transformer模型；
+​		Encoder-Decoder模型(例如BART、T5),又称Seq2Seq(sequenece-to-sequence) Transformer模型。
+二、Transformer模型
+​	1.Transformer 模型本质是预训练模型，大都采用自监督模型(Self-supervised learning) 的方式在大量语料上进行训练。
+​	2.自监督学习是一种训练目标可以根据模型的输入自动计算的训练方法。
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/01/10/2a7b612ea75e/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/2a7b612ea75e/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.356Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">LSTM(Long Short Term Memory)
+一、RNN
+​	全拼 Recurrent Neural Networks.
+
+​	当前节点受到前面节点的隐节点影响。
+RNN的数学表达式可以表示为：
+ht=σ(xt∗wxt+ht−1∗wht+b)h_t =\sigma(x_t * w_{xt}+h_{t-1} *w_{ht}+b)
+ht​=σ(xt​∗wxt​+ht−1​∗wht​+b)
+​	RNN单元：
+
+​	长期依赖（Long Term Dependencies)：
+123456eg1: The cat, which already ate a bunch of food, was full.      |   |     |      |     |  |   |   |   |     |   |     t0  t1    t2      t3    t4 t5  t6  t7  t8    t9 t10eg2: The cats, which already ate a bunch of food, were full.      |   |      |      ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/01/10/e5dcd6f21496/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/e5dcd6f21496/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.356Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content">Kmeans 聚类算法
+一、Kmeans 聚类算法
+​	Kmeans是一种无监督学习的代表。聚类是没有样本的标签的情况下，通过数据之间的内在关系把样本划分为若干的类别。增大类内聚，减少类间距。
+​	聚类是通过迭代寻找K个簇(cluster) 的一种划分方案，使得聚类结果对应的损失函数最小。其中损失函数我们可以定义为各个样本到所属簇中心点的误差平方和：
+J(c,μ)=∑i=1M∣∣xi−μci∣∣2J(c,\mu) = \sum_{i = 1}^{M}||x_i-\mu_{c_i}||^2
+J(c,μ)=i=1∑M​∣∣xi​−μci​​∣∣2
+二、具体步骤
+​	1.数据预处理。主要是标准化，异常点过滤
+​	2.随机选取K 个中心点，记为μ1(0),μ2(0),μ3(0),...,μk(0)\mu_1^{(0)},\mu_2^{(0)},\mu_3^{(0)},...,\mu_k^{(0)}μ1(0)​,μ2(0)​,μ3(0)​,...,μk(0)​
+​	3.定义损失函数：J(c,μ)=min∑i=1M∣∣xi−μci∣∣2J(c,\mu) = min\sum_{i = 1}^{M}| ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/01/10/c2c757b31409/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/c2c757b31409/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:15:23.350Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/01/10/3aaf01bd9d53/" title="page"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="page"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/01/10/3aaf01bd9d53/" title="page">page</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-01-10T03:13:34.000Z" title="Created 2024-01-10 11:13:34">2024-01-10</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="栈、队列和数组"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组">栈、队列和数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-25T14:53:05.000Z" title="Created 2023-07-25 22:53:05">2023-07-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/kaoyan-DS/">kaoyan-DS</a></span></div><div class="content">第三章： 栈、队列和数组
+3.1栈
+3.1.1栈的基本概念
 \quad （1）栈的定义
 \quad \quad 只能在一端进行插入删除操作。
 \quad （2）栈的基本操作
@@ -149,13 +224,12 @@
 \quad \quad Pop(&amp;S,&amp;x);
 \quad \quad GetTop(S,&amp;x);
 \quad \quad DestroyStack(&amp;S);
-栈的顺序存储结构
+3.1.2栈的顺序存储结构
 \quad （1）顺序栈的实现
 12345#define MaxSize 50typedef struct &#123;    Elemtype data[MaxSize];    int top;&#125;SqStack;
 \quad （2）顺序栈的基本运算
 \quad   \quad \quad 初始化
-1234void InitStack(SqStack &amp;S)&#123;    S.top = -1;&#125;
-\quad   \qua ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第 2 章 -- 线性表"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表">第 2 章 -- 线性表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-24T15:19:44.000Z" title="Created 2023-07-24 23:19:44">2023-07-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/kaoyan-DS/">kaoyan-DS</a></span></div><div class="content">第二章： 线性表
+1234void InitStack(SqStack &amp;S)&#123;    S.top = -1;&#125; ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第 2 章 -- 线性表"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表">第 2 章 -- 线性表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-24T15:19:44.000Z" title="Created 2023-07-24 23:19:44">2023-07-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/kaoyan-DS/">kaoyan-DS</a></span></div><div class="content">第二章： 线性表
 2.1 线性表的定义和基本操作
 2.1.1 线性表的定义
 \quad 线性表： 具有相同数据类型的n个数据元素的有限序列。
@@ -173,120 +247,11 @@
 2.2 线性表的顺序表示
 2.2.1 顺序表的定义
 \quad 顺序表长度固定：
-12345#define MaxSize 50typedef struct &#123;    Elemtype  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/24/a08344d8c99f/" title="第 1 章 -- 绪论"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第 1 章 -- 绪论"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/24/a08344d8c99f/" title="第 1 章 -- 绪论">第 1 章 -- 绪论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-07-24T14:37:29.000Z" title="Created 2023-07-24 22:37:29">2023-07-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/kaoyan-DS/">kaoyan-DS</a></span></div><div class="content">第一章： 绪论
-1.1 数据结构的基本概念
-1.1.1基本概念和术语
-1.数据
-\quad信息的载体，描述客观事物属性的数、字符等能输入到计算机中并被计算机处理的集合。
-2.数据元素
-\quad 是数据的基本单位，通常作为一个整体进行考虑。但注意数据元素可以被拆分为若干个数据项。比如一条学生记录是一个数据元素，身份证号、性别、姓名都是一个数据项。
-3.数据对象
-4.数据类型
-5.数据结构
-$\quad $ 数据结构包括 逻辑结构、物理结构、数据的运算。
-1.1.2 数据结构的三要素
-1.逻辑结构
-$\quad $ 线性结构：一般线性表、受限线性表（队列、栈、串）、线性表的推广（数组）
-\quad 非线性结构：集合、树形结构（二叉树）、图结构（有向图、无向图）
-2.存储结构
-\quad 顺序存储：相邻存储
-\quad 链式存储：借助指针来连接元素存储的顺序关系
-\quad 索引存储：用索引表来进行检索。 优点：检索速度快。
-\quad 散列存储：又称哈希存储。优点：检索、增删结点都很快。 对于散列函数的依赖较大。
-3.数据的运算
-\quad 包括对于数据运算的定义和实现。
-1.2 算法和 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/10/6ee8fde536d1/" title="数据结构--05字符串"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构--05字符串"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/10/6ee8fde536d1/" title="数据结构--05字符串">数据结构--05字符串</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-06-10T08:51:03.000Z" title="Created 2023-06-10 16:51:03">2023-06-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">-数据结构</a></span></div><div class="content">第五节、字符串
-一、数据结构
-​	1.顺序存储
-123456#define MaxSize 100typedef struct &#123;    char ch[MaxSize];    int len;&#125;SqString;
-2.链式存储
-1234typedef struct node &#123;    char data;    struct node * next;&#125;LinkString;
-二、顺序串基本操作
-
-
-串的赋值
-12345678910void Assign(SqString &amp;s,chat t[])&#123;    int i = 0;    while(t[i]!= &#x27;/0&#x27;)    &#123;        s.ch[i] = t[i];        i++;    &#125;    s.len = i;&#125;
-
-
-串的复制
-12345678910void StrCopy(SqString &amp;s,SqString t)&#123;    int ;    for(i=0;i&lt;t.len; ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/05/383a4ce5d24e/" title="统计学习--01机器学习简介"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="统计学习--01机器学习简介"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/05/383a4ce5d24e/" title="统计学习--01机器学习简介">统计学习--01机器学习简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-06-05T05:28:49.000Z" title="Created 2023-06-05 13:28:49">2023-06-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">统计学习</a></span></div><div class="content">统计学习–01机器学习简介
-一、分类
-1.机器学习根据任务类型，可划分为：
-​	监督学习：从已经标注的数据中来训练模型。主要分为：回归，分类、序列标注。
-​	无监督学习：从未标记的数据中训练模型。主要分为聚类任务、降维任务。
-​	半监督学习：用大量未标记的数据和少量标记的数据来训练模型。
-​	强化学习：从系统和环境之间大量交互知识中训练模型。
-2.机器学习根据算法类型，可以分为：
-​	传统机器学习：基于数学模型的机器学习方法，包括逻辑回归、决策树、SVM等
-​	深度学习：基于神经网络的机器学习方法，包括前馈神经网络、卷积神经网络、递归神经网络等。
-二、基本概念
-2.1.特征空间
-特征向量表示每个具体的输入，所有的特征向量构成特征空间。
-2.2.样本表示
-x 表示输入实例，y表示真实的样本标签（标注的样本标签）,y^\hat yy^​是预测的一个值。
-三、监督学习
-3.1.监督学习
-1.监督学习的数据是被人工打标签的。
-2.监督学习假设输入x与标记y遵循联合概率分布P(x,y),训练数据和测试数据依联合概率分布p(x,y)独立同分布产生。
-3.监督学习的目的在于学习一个由输入到输出到映射 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/05/31/2f3603757ed6/" title="FM"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FM"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/31/2f3603757ed6/" title="FM">FM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-05-31T12:56:37.000Z" title="Created 2023-05-31 20:56:37">2023-05-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MachineLearning/">MachineLearning</a></span></div><div class="content">FM模型（Factorization Machines）
-1.线性回归
-​	回归是一种预测性的，我们是主要根据已有的数据来训练一个回归模型，来预测将要到来的数据的类型。
-假设目标值与特征之间线性相关y^=wx+b我们在定义一个损失函数，假设为均方误差：L=1n∑i=1n(yi^−yi)2=1n∑n=1n(wxi+b−y)2所以现在要最小化损失函数,得到对应的w∗,b∗，即：(w∗,b∗)=argmin⁡w,b∑i=1n(wxi+b−yi)2假设目标值与特征之间线性相关\\
-\hat{y} = wx+b\\\\
-我们在定义一个损失函数，假设为均方误差：\\
-L=\frac{1}{n} \sum_{i=1}^{n}(\hat{y_i}-y_i)^2 = \frac{1}{n}\sum_{n=1}^{n}(wx_i+b-y)^2   \\\\
-所以现在要最小化损失函数,得到对应的w^*,b^*，即：\\
-(w^*,b^*) = arg \min_{w,b} \sum_{i = 1}^{n}(wx_i+b-y_i)^2
-假设目标值与特征之间线性相关y^​=wx+b我们在定义一个损失函数，假设为 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/05/31/36cd3f3d612c/" title="FFM"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FFM"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/31/36cd3f3d612c/" title="FFM">FFM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-05-31T12:56:23.000Z" title="Created 2023-05-31 20:56:23">2023-05-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MachineLearning/">MachineLearning</a></span></div><div class="content">FFM
-1.介绍
-​	在FM中，将特征与特征之间交互作用的时候，用的是一个变量。在FFM中这一点得到了改进，作者认为一个特征在跟其他特征交互的时候，会发挥不同的作用，因此应该具有不同的向量表示。
-2.原理
-​	先把FM的表达式放在这里我们：
-y^=w0+∑i=1nwixi+∑i=1n−1∑j=i+1n&lt;vi,vj&gt;xixj\hat y = w_0 + \sum _{i=1}^{n}w_ix_i+\sum_{i=1}^{n-1}\sum _{j=i+1}^{n}&lt;v_i,v_j&gt;x_ix_j
-y^​=w0​+i=1∑n​wi​xi​+i=1∑n−1​j=i+1∑n​&lt;vi​,vj​&gt;xi​xj​
-​	接下来我们想办法增加一个域，增加一个参数，增强模型的能力。
-​	FM中的特征xix_ixi​在跟其他特征交叉的时候，特征xix_ixi​使用的是同一个隐向量ViV_iVi​,而FFM模型将特征按照事先的规则分为多个场，每个特征将被映射为多个隐向量：Vi1,Vi2,Vi3.....VifV_{i1},V_{i2},V_{i3}.....V_{if}Vi1​, ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/05/25/c5085f212b6d/" title="激活函数"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="激活函数"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/25/c5085f212b6d/" title="激活函数">激活函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-05-25T13:52:53.000Z" title="Created 2023-05-25 21:52:53">2023-05-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MachineLearning/">MachineLearning</a></span></div><div class="content">激活函数
-激活函数的意义主要是引入非线性函数，增加神经网络的非线性拟合能力
-1.sigmoid
-
-sigmoid函数的输出范围为（0，1），可以作为一个概率的输出值，且输出范围有限，数据传递过程中不易发散。但是饱和的时候，梯度太小。
-f(x) = 11+e−xf′(x) = (11+e−x)′ = ((1+e−x)−1)′=(−1)∗(1+e−x)−2∗e−x∗(−1)=(1+e−x)−2∗e−x=e−x(1+e−x)2=11+e−x∗e−x1+e−x=f(x)∗(1−f(x))f(x) \space = \space \frac{1}{1+e^{-x}}
-\\\\
-f^{&#x27;}(x) \space = \space (\frac{1}{1+e^{-x}})^{&#x27;} \space = \space ((1+e^{-x})^{-1})^{&#x27;} =(-1)*(1+e^{-x})^{-2}*e^{-x}*(-1) \\\\
-= (1+e^{-x})^{-2}*e^{-x} = \frac{e^{-x}}{(1+e^{-x})^2} = \frac{1}{1+e^{ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/05/10/ae192d47d042/" title="梯度下降"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="梯度下降"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/10/ae192d47d042/" title="梯度下降">梯度下降</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-05-10T13:52:53.000Z" title="Created 2023-05-10 21:52:53">2023-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MachineLearning/">MachineLearning</a></span></div><div class="content">梯度下降：
-梯度=∇f(x,y)=∂f∂x⋅i+∂f∂y⋅j梯度 = \nabla f(x,y)\\=\frac{\partial f}{\partial x}\cdot i+\frac{\partial f}{\partial y}\cdot j
-梯度=∇f(x,y)=∂x∂f​⋅i+∂y∂f​⋅j
-df=∂f∂xdx+∂f∂ydydf = \frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy
-df=∂x∂f​dx+∂y∂f​dy
-z[l]=W[l]⋅a[l−1]+b[l]z^{[l]} = W^{[l]}\cdot a^{[l-1]}+b^{[l]}
-z[l]=W[l]⋅a[l−1]+b[l]
-正向传播
-下面我们探讨一下这个公式（3）的正向计算过程：
-我们探讨假如这是第一个隐藏层，处理的是输入的数据 X:
-然后的话，我们的 X 假如是(m,n) 的矩阵，然后W是(k,m)的矩阵,b是(k,1)的矩阵
-X = \left[
-\matrix{
-  ... &amp; ... &amp; ...\\
-   x_1^ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/05/10/8031568d2c52/" title="损失函数"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="损失函数"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/10/8031568d2c52/" title="损失函数">损失函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-05-10T13:52:05.000Z" title="Created 2023-05-10 21:52:05">2023-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MachineLearning/">MachineLearning</a></span></div><div class="content">损失函数：
-最小二乘法
-就是说
-Min12∑i=1n(xi−yi)2Min \frac{1}{2}\sum_{i=1}^{n}{(x_i-y_i)^2}
-Min21​i=1∑n​(xi​−yi​)2
-最大似然
-最大似然估计的意思是啥类，就是说
-Max∏i=1n(xi∣yi)Max\prod_{i=1}^{n}(x_i|y_i)
-Maxi=1∏n​(xi​∣yi​)
-我们在这里假设 xi{x_i}xi​ 的取值为0或1,y_i表示的是概率
-Max∏i=1nyixi(1−yi)1−xiMax\prod_{i=1}^{n}y_i^{x_i}(1-y_i)^{1-x_i}
-Maxi=1∏n​yixi​​(1−yi​)1−xi​
-我们想办法把连乘改为连加，采用对数的方法
-Max∑i=1n(xilog⁡yi + (1−xi)log⁡(1−yi))Max\sum_{i=1}^{n}(x_i\log y_i\space+\space (1-x_i)\log (1-y_i)  	)
-Maxi=1∑n​(xi​logyi​ + (1−xi​)log(1−yi​))
-然后我们一把求最小，所以加一个负号就好了 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Songzi</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" href="https://github.com/Songzi1228"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="栈、队列和数组"/></a><div class="content"><a class="title" href="/2023/07/25/ba3406a99a2f/" title="栈、队列和数组">栈、队列和数组</a><time datetime="2023-07-25T14:53:05.000Z" title="Created 2023-07-25 22:53:05">2023-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第 2 章 -- 线性表"/></a><div class="content"><a class="title" href="/2023/07/24/fef9ee21de6e/" title="第 2 章 -- 线性表">第 2 章 -- 线性表</a><time datetime="2023-07-24T15:19:44.000Z" title="Created 2023-07-24 23:19:44">2023-07-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/24/a08344d8c99f/" title="第 1 章 -- 绪论"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第 1 章 -- 绪论"/></a><div class="content"><a class="title" href="/2023/07/24/a08344d8c99f/" title="第 1 章 -- 绪论">第 1 章 -- 绪论</a><time datetime="2023-07-24T14:37:29.000Z" title="Created 2023-07-24 22:37:29">2023-07-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/10/6ee8fde536d1/" title="数据结构--05字符串"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构--05字符串"/></a><div class="content"><a class="title" href="/2023/06/10/6ee8fde536d1/" title="数据结构--05字符串">数据结构--05字符串</a><time datetime="2023-06-10T08:51:03.000Z" title="Created 2023-06-10 16:51:03">2023-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/05/383a4ce5d24e/" title="统计学习--01机器学习简介"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="统计学习--01机器学习简介"/></a><div class="content"><a class="title" href="/2023/06/05/383a4ce5d24e/" title="统计学习--01机器学习简介">统计学习--01机器学习简介</a><time datetime="2023-06-05T05:28:49.000Z" title="Created 2023-06-05 13:28:49">2023-06-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+12345#define MaxSize 50typedef struct &#123;    Elemtype  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Songzi</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" href="https://github.com/Songzi1228"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/62952bc30e08/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2024/01/10/62952bc30e08/" title="No title">No title</a><time datetime="2024-01-10T03:15:23.389Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/99f41d564827/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2024/01/10/99f41d564827/" title="No title">No title</a><time datetime="2024-01-10T03:15:23.382Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/960ed5a79a8d/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2024/01/10/960ed5a79a8d/" title="No title">No title</a><time datetime="2024-01-10T03:15:23.373Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/4e83bb4180ae/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2024/01/10/4e83bb4180ae/" title="No title">No title</a><time datetime="2024-01-10T03:15:23.373Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/2a7b612ea75e/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2024/01/10/2a7b612ea75e/" title="No title">No title</a><time datetime="2024-01-10T03:15:23.356Z" title="Created 2024-01-10 11:15:23">2024-01-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GUI-Tk/"><span class="card-category-list-name">-GUI(Tk)</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Shell%E7%BC%96%E7%A8%8B/"><span class="card-category-list-name">-Shell编程</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">-数据结构</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-C/"><span class="card-category-list-name">C/C++</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MachineLearning/"><span class="card-category-list-name">MachineLearning</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">Python基础</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/kaoyan-DS/"><span class="card-category-list-name">kaoyan-DS</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">统计学习</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-25T15:12:38.974Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Songzi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            </ul></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">36</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-01-10T03:17:55.024Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Songzi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
